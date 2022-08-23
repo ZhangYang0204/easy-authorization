@@ -9,6 +9,7 @@ import pers.zhangyang.easyauthorization.service.impl.GuiServiceImpl;
 import pers.zhangyang.easyauthorization.yaml.MessageYaml;
 import pers.zhangyang.easylibrary.base.FiniteInputListenerBase;
 import pers.zhangyang.easylibrary.base.GuiPage;
+import pers.zhangyang.easylibrary.util.Md5Util;
 import pers.zhangyang.easylibrary.util.MessageUtil;
 import pers.zhangyang.easylibrary.util.TransactionInvocationHandler;
 
@@ -32,7 +33,7 @@ public class PlayerInputAfterClickMainOptionPageRegisterAccount extends FiniteIn
         }
 
         GuiService guiService= (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
-        AccountMeta accountMeta=new AccountMeta(owner.getUniqueId().toString(),messages[0]);
+        AccountMeta accountMeta=new AccountMeta(owner.getUniqueId().toString(), Md5Util.getMd5Value(messages[0]));
         try {
             guiService.registerAccount(accountMeta);
         } catch (DuplicateAccountException e) {

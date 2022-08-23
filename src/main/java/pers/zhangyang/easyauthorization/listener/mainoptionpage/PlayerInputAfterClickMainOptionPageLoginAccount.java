@@ -11,6 +11,7 @@ import pers.zhangyang.easyauthorization.service.impl.GuiServiceImpl;
 import pers.zhangyang.easyauthorization.yaml.MessageYaml;
 import pers.zhangyang.easylibrary.base.FiniteInputListenerBase;
 import pers.zhangyang.easylibrary.base.GuiPage;
+import pers.zhangyang.easylibrary.util.Md5Util;
 import pers.zhangyang.easylibrary.util.MessageUtil;
 import pers.zhangyang.easylibrary.util.TransactionInvocationHandler;
 
@@ -39,7 +40,7 @@ public class PlayerInputAfterClickMainOptionPageLoginAccount extends FiniteInput
             MessageUtil.sendMessageTo(player,list);
             return;
         }
-        if (!accountMeta.getAccountPassword().equals(messages[0])){
+        if (!accountMeta.getAccountPassword().equals(Md5Util.getMd5Value(messages[0]))){
             List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.wrongPassword");
             MessageUtil.sendMessageTo(player,list);
             return;
