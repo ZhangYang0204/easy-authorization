@@ -1,0 +1,9 @@
+completer:
+
+  #当输入了/easyAuthorization后将提示补全以下内容
+  easyAuthorization:
+    - "help"
+    - "reloadPlugin"
+    - "correctYaml"
+    - "openGui"
+    - "openMui"

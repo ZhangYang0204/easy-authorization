@@ -1,0 +1,9 @@
+completer:
+
+  #When you type /easyAuthorization you will be prompted to complete the following
+  easyAuthorization:
+    - "help"
+    - "reloadPlugin"
+    - "correctYaml"
+    - "openGui"
+    - "openMui"

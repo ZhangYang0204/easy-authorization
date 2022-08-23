@@ -1,0 +1,79 @@
+message:
+
+  input:
+    cancel: "Cancel"
+
+  chat:
+    failureGetLatestVersion:
+      - "&c&l Failed to get the latest version of EasyAuthorization."
+    notPermission:
+      - "&c&lYou are missing permission &f{permission}."
+    correctYaml:
+      - "&b&lFixed all Yaml files for missing and redundant keys."
+    help:
+      - "&b&l==== help list ===="
+      - "&b&l/EasyAuthorization help View Help"
+      - "&b&l/EasyAuthorization reloadPlugin reload plugin"
+      - "&b&l/EasyAuthorization correctYaml Fix Yaml files"
+      - "&b&l/EasyAuthorization openGui openGui"
+      - "&b&l/EasyAuthorization openMui <player name> Open Mui as the specified player"
+    notifyVersion:
+      - "&b&lThe current version of EasyAuthorization is &f{current_version}, &b&lthe latest version is &f{latest_version}."
+    enablePlugin:
+      - "&a╭━━━╮╱╱╱╱╱╱╱╱╱╭━━━╮╱╱╭╮╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮"
+      - "&a┃╭━━╯╱╱╱╱╱╱╱╱╱┃╭━╮┃╱╭╯╰┫┃╱╱╱╱╱╱╱╱╱╱╱╱╱╭╯╰╮"
+      - "&a┃╰━━┳━━┳━━┳╮╱╭┫┃╱┃┣╮┣╮╭┫╰━┳━━┳━┳┳━━━┳━┻╮╭╋┳━━┳━╮"
+      - "&a┃╭━━┫╭╮┃━━┫┃╱┃┃╰━╯┃┃┃┃┃┃╭╮┃╭╮┃╭╋╋━━┃┃╭╮┃┃┣┫╭╮┃╭╮╮"
+      - "&a┃╰━━┫╭╮┣━━┃╰━╯┃╭━╮┃╰╯┃╰┫┃┃┃╰╯┃┃┃┃┃━━┫╭╮┃╰┫┃╰╯┃┃┃┃"
+      - "&a╰━━━┻╯╰┻━━┻━╮╭┻╯╱╰┻━━┻━┻╯╰┻━━┻╯╰┻━━━┻╯╰┻━┻┻━━┻╯╰╯"
+    disablePlugin:
+      - "&c╭━━━╮╱╱╱╱╱╱╱╱╱╭━━━╮╱╱╭╮╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮"
+      - "&c┃╭━━╯╱╱╱╱╱╱╱╱╱┃╭━╮┃╱╭╯╰┫┃╱╱╱╱╱╱╱╱╱╱╱╱╱╭╯╰╮"
+      - "&c┃╰━━┳━━┳━━┳╮╱╭┫┃╱┃┣╮┣╮╭┫╰━┳━━┳━┳┳━━━┳━┻╮╭╋┳━━┳━╮"
+      - "&c┃╭━━┫╭╮┃━━┫┃╱┃┃╰━╯┃┃┃┃┃┃╭╮┃╭╮┃╭╋╋━━┃┃╭╮┃┃┣┫╭╮┃╭╮╮"
+      - "&c┃╰━━┫╭╮┣━━┃╰━╯┃╭━╮┃╰╯┃╰┫┃┃┃╰╯┃┃┃┃┃━━┫╭╮┃╰┫┃╰╯┃┃┃┃"
+      - "&c╰━━━┻╯╰┻━━┻━╮╭┻╯╱╰┻━━┻━┻╯╰┻━━┻╯╰┻━━━┻╯╰┻━┻┻━━┻╯╰╯"
+    invalidArgument:
+      - "&c&l invalid argument &F{argument}"
+    notOnline:
+      - "&c&L player is not online"
+
+    loginAccount:
+      - "&B&l login successful"
+    reloadPlugin:
+      - "&b&l reload successful."
+    registerAccount:
+      - "&B&l registration successful"
+    cancelAccount:
+      - "&B&l cancelled the account"
+    changeAccountPassword:
+      - "&B&l changed password"
+
+    howToRegisterAccount:
+      - "&B&lEntered password to complete registration, entered &f&lCancel &B&lCancel"
+    howToLoginAccount:
+      - "&B&lEnter password to complete registration, enter &f&lCancel &B&lCancel"
+    howToChangeAccountPassword:
+      - "&B&lEnter a new password to complete the change, enter &F&lCancel &B&lCancel"
+
+    wrongPassword:
+      - "&C&l password error"
+    notExistAccountWhenChangeAccountPassword:
+      - "&C&lNon-existing account, please register first"
+
+    notExistAccountWhenLoginAccount:
+      - "&C&lAccounts that do not exist, please register first"
+    notLoginAccountWhenChangeAccountPassword:
+      - "&C&lPlease login first before you can change your password"
+    notLoginAccountWhenCancelAccount:
+      - "&C&lPlease login before you can cancel your account"
+    notExistAccountWhenCancelAccount:
+      - "&C&lNot an account that does not exist and cannot be logged out"
+    duplicateLoginAccount:
+      - "&C&l is already logged in"
+    duplicateAccount:
+      - "&C&l is already registered"
+
+
+
+
