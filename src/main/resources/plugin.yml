@@ -1,0 +1,7 @@
+name: EasyAuthorization
+version: 1.0.0
+main: pers.zhangyang.easyauthorization.EasyAuthorization
+api-version: 1.13
+commands:
+  EasyAuthorization:
+    aliases: ea

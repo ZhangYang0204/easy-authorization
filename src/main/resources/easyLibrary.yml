@@ -1,0 +1,10 @@
+daoPackage:
+  - "pers/zhangyang/easyauthorization/dao"
+listenerPackage:
+  - "pers/zhangyang/easyauthorization/listener"
+executorPackage:
+  - "pers/zhangyang/easyauthorization/executor"
+yamlPackage:
+  - "pers/zhangyang/easyauthorization/yaml"
+guiButtonHandlerPackage:
+  - "pers/zhangyang/easyauthorization/listener"
