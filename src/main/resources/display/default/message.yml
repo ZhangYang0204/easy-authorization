@@ -52,7 +52,7 @@ message:
     howToRegisterAccount:
       - "&B&l输入密码完成注册，输入 &f&l取消 &B&l取消"
     howToLoginAccount:
-      - "&B&l输入密码完成注册，输入 &f&l取消 &B&l取消"
+      - "&B&l输入密码完成登录，输入 &f&l取消 &B&l取消"
     howToChangeAccountPassword:
       - "&B&l输入新密码完成修改，输入 &F&l取消 &B&l取消"
 

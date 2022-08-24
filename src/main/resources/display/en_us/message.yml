@@ -52,7 +52,7 @@ message:
     howToRegisterAccount:
       - "&B&lEntered password to complete registration, entered &f&lCancel &B&lCancel"
     howToLoginAccount:
-      - "&B&lEnter password to complete registration, enter &f&lCancel &B&lCancel"
+      - "&B&lEnter password to complete login, enter &f&lCancel &B&lCancel"
     howToChangeAccountPassword:
       - "&B&lEnter a new password to complete the change, enter &F&lCancel &B&lCancel"
 
