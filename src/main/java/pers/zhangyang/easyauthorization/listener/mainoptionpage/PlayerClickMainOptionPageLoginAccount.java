@@ -20,30 +20,30 @@ import java.util.List;
 @EventListener
 public class PlayerClickMainOptionPageLoginAccount implements Listener {
 
-    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class,slot = {23})
-    public void on(InventoryClickEvent event){
-        Player player= (Player) event.getWhoClicked();
-        MainOptionPage mainOptionPage= (MainOptionPage) event.getInventory().getHolder();
-        GuiService guiService= (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
-        AccountMeta accountMeta=guiService.getAccount(mainOptionPage.getOwner().getUniqueId().toString());
-        Player owner=mainOptionPage.getOwner().getPlayer();
-        if (owner==null){
-            List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.notOnline");
-            MessageUtil.sendMessageTo(player,list);
+    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {23})
+    public void on(InventoryClickEvent event) {
+        Player player = (Player) event.getWhoClicked();
+        MainOptionPage mainOptionPage = (MainOptionPage) event.getInventory().getHolder();
+        GuiService guiService = (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
+        AccountMeta accountMeta = guiService.getAccount(mainOptionPage.getOwner().getUniqueId().toString());
+        Player owner = mainOptionPage.getOwner().getPlayer();
+        if (owner == null) {
+            List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notOnline");
+            MessageUtil.sendMessageTo(player, list);
             return;
         }
-        if (accountMeta==null){
-            List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.notExistAccountWhenLoginAccount");
-            MessageUtil.sendMessageTo(player,list);
+        if (accountMeta == null) {
+            List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notExistAccountWhenLoginAccount");
+            MessageUtil.sendMessageTo(player, list);
             return;
         }
-        Gamer gamer= GamerManager.INSTANCE.getGamer(owner);
-        if (gamer.isLogin()){
-            List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.duplicateLoginAccount");
-            MessageUtil.sendMessageTo(player,list);
+        Gamer gamer = GamerManager.INSTANCE.getGamer(owner);
+        if (gamer.isLogin()) {
+            List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.duplicateLoginAccount");
+            MessageUtil.sendMessageTo(player, list);
             return;
         }
-        new PlayerInputAfterClickMainOptionPageLoginAccount(player,mainOptionPage.getOwner(),mainOptionPage);
+        new PlayerInputAfterClickMainOptionPageLoginAccount(player, mainOptionPage.getOwner(), mainOptionPage);
     }
 
 }

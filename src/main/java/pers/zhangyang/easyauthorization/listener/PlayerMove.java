@@ -4,28 +4,26 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
 import pers.zhangyang.easyauthorization.domain.Gamer;
 import pers.zhangyang.easyauthorization.domain.MainOptionPage;
 import pers.zhangyang.easyauthorization.manager.GamerManager;
 import pers.zhangyang.easylibrary.annotation.EventListener;
-import pers.zhangyang.easylibrary.base.GuiPage;
 
 @EventListener
 public class PlayerMove implements Listener {
     @EventHandler
-    public void on(PlayerMoveEvent event){
-        Player player=event.getPlayer();
-        Gamer gamer= GamerManager.INSTANCE.getGamer(player);
+    public void on(PlayerMoveEvent event) {
+        Player player = event.getPlayer();
+        Gamer gamer = GamerManager.INSTANCE.getGamer(player);
 
-        if (gamer.isLogin()){
+        if (gamer.isLogin()) {
             return;
         }
-        if (event.getFrom().getX()==event.getTo().getX()&&event.getFrom().getZ()==event.getTo().getZ()){
+        if (event.getTo()!=null&&event.getFrom().getX() == event.getTo().getX() && event.getFrom().getZ() == event.getTo().getZ()) {
             return;
         }
-        if (!(player.getOpenInventory().getTopInventory() instanceof MainOptionPage)){
-            new MainOptionPage(player,null,player).send();
+        if (!(player.getOpenInventory().getTopInventory() instanceof MainOptionPage)) {
+            new MainOptionPage(player, null, player).send();
         }
         event.setCancelled(true);
 

@@ -1,6 +1,7 @@
 package pers.zhangyang.easyauthorization.domain;
 
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 public class Gamer {
     private Player player;
@@ -8,12 +9,7 @@ public class Gamer {
 
     private boolean login;
 
-    public Gamer(Player player, boolean login) {
-        this.player = player;
-        this.login = login;
-    }
-
-    public void setPlayer(Player player) {
+    public Gamer(Player player) {
         this.player = player;
     }
 
@@ -25,12 +21,13 @@ public class Gamer {
         this.login = login;
     }
 
-    public Gamer(Player player){
-        this.player=player;
-    }
-
+    @NotNull
     public Player getPlayer() {
         return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
 }

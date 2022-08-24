@@ -18,31 +18,31 @@ import java.util.List;
 public class PlayerInputAfterClickMainOptionPageRegisterAccount extends FiniteInputListenerBase {
     public PlayerInputAfterClickMainOptionPageRegisterAccount(Player player, OfflinePlayer owner, GuiPage previousPage) {
         super(player, owner, previousPage, 1);
-        List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.howToRegisterAccount");
-        MessageUtil.sendMessageTo(player,list);
+        List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.howToRegisterAccount");
+        MessageUtil.sendMessageTo(player, list);
     }
 
     @Override
     public void run() {
 
-        Player owner=this.owner.getPlayer();
-        if (owner==null){
-            List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.notOnline");
-            MessageUtil.sendMessageTo(player,list);
+        Player owner = this.owner.getPlayer();
+        if (owner == null) {
+            List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notOnline");
+            MessageUtil.sendMessageTo(player, list);
             return;
         }
 
-        GuiService guiService= (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
-        AccountMeta accountMeta=new AccountMeta(owner.getUniqueId().toString(), Md5Util.getMd5Value(messages[0]));
+        GuiService guiService = (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
+        AccountMeta accountMeta = new AccountMeta(owner.getUniqueId().toString(), Md5Util.getMd5Value(messages[0]));
         try {
             guiService.registerAccount(accountMeta);
         } catch (DuplicateAccountException e) {
-            List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.duplicateAccount");
-            MessageUtil.sendMessageTo(player,list);
+            List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.duplicateAccount");
+            MessageUtil.sendMessageTo(player, list);
             return;
         }
-        List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.registerAccount");
-        MessageUtil.sendMessageTo(player,list);
+        List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.registerAccount");
+        MessageUtil.sendMessageTo(player, list);
 
     }
 }

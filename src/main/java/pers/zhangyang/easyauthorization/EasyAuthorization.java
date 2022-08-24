@@ -8,7 +8,7 @@ public class EasyAuthorization extends EasyPlugin {
     public void onOpen() {
 
         // bStats统计信息
-        new Metrics(EasyAuthorization.instance,16232);
+        new Metrics(EasyAuthorization.instance, 16232);
     }
 
     @Override

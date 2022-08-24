@@ -1,2 +1,4 @@
-package pers.zhangyang.easyauthorization.exception;public class DuplicateAccountException extends Exception{
+package pers.zhangyang.easyauthorization.exception;
+
+public class DuplicateAccountException extends Exception {
 }

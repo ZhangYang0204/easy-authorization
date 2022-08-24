@@ -1,5 +1,6 @@
 package pers.zhangyang.easyauthorization.dao;
 
+import org.jetbrains.annotations.Nullable;
 import pers.zhangyang.easyauthorization.meta.AccountMeta;
 import pers.zhangyang.easylibrary.base.DaoBase;
 
@@ -22,7 +23,7 @@ public class AccountDao extends DaoBase {
         }
     }
 
-    public int insert(AccountMeta accountMeta){
+    public int insert(AccountMeta accountMeta) {
         try {
             PreparedStatement ps = getConnection().prepareStatement("" +
                     "INSERT INTO account (player_uuid,account_password)" +
@@ -34,7 +35,9 @@ public class AccountDao extends DaoBase {
             throw new RuntimeException(e);
         }
     }
-    public AccountMeta getByPlayerUuid(String playerUuid){
+
+    @Nullable
+    public AccountMeta getByPlayerUuid(String playerUuid) {
         try {
 
             PreparedStatement ps = getConnection().prepareStatement("" +
@@ -48,14 +51,15 @@ public class AccountDao extends DaoBase {
             throw new RuntimeException(e);
         }
     }
-    public int deleteByPlayerUuid(String playerUuid){
+
+    public int deleteByPlayerUuid(String playerUuid) {
         try {
 
             PreparedStatement ps = getConnection().prepareStatement("" +
                     "DELETE FROM account WHERE player_uuid = ?" +
                     "");
             ps.setString(1, playerUuid);
-            return  ps.executeUpdate();
+            return ps.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

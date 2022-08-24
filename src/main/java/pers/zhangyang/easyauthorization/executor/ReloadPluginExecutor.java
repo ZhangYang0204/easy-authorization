@@ -5,9 +5,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import pers.zhangyang.easyauthorization.manager.GamerManager;
+import pers.zhangyang.easyauthorization.yaml.MessageYaml;
 import pers.zhangyang.easylibrary.base.ExecutorBase;
 import pers.zhangyang.easylibrary.util.MessageUtil;
-import pers.zhangyang.easyauthorization.yaml.MessageYaml;
 
 import java.util.List;
 
@@ -18,11 +18,11 @@ public class ReloadPluginExecutor extends ExecutorBase {
 
     @Override
     protected void run() {
-        if (args.length!=0){
+        if (args.length != 0) {
             return;
         }
 
-        for (Player p: Bukkit.getOnlinePlayers()){
+        for (Player p : Bukkit.getOnlinePlayers()) {
             GamerManager.INSTANCE.remove(p);
         }
 

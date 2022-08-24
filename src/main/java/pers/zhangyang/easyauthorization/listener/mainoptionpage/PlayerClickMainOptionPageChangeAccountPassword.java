@@ -1,4 +1,3 @@
-
 package pers.zhangyang.easyauthorization.listener.mainoptionpage;
 
 import org.bukkit.entity.Player;
@@ -6,16 +5,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import pers.zhangyang.easyauthorization.domain.Gamer;
 import pers.zhangyang.easyauthorization.domain.MainOptionPage;
-import pers.zhangyang.easyauthorization.exception.NotExistAccountException;
 import pers.zhangyang.easyauthorization.manager.GamerManager;
-import pers.zhangyang.easyauthorization.service.GuiService;
-import pers.zhangyang.easyauthorization.service.impl.GuiServiceImpl;
 import pers.zhangyang.easyauthorization.yaml.MessageYaml;
 import pers.zhangyang.easylibrary.annotation.EventListener;
 import pers.zhangyang.easylibrary.annotation.GuiDiscreteButtonHandler;
 import pers.zhangyang.easylibrary.util.MessageUtil;
-import pers.zhangyang.easylibrary.util.TransactionInvocationHandler;
-import sun.applet.Main;
 
 import java.util.List;
 
@@ -41,6 +35,6 @@ public class PlayerClickMainOptionPageChangeAccountPassword implements Listener 
             MessageUtil.sendMessageTo(player, list);
             return;
         }
-        new PlayerInputAfterClickMainOptionPageChangeAccountPassword(player,mainOptionPage.getOwner(),mainOptionPage);
+        new PlayerInputAfterClickMainOptionPageChangeAccountPassword(player, mainOptionPage.getOwner(), mainOptionPage);
     }
 }

@@ -1,4 +1,4 @@
 package pers.zhangyang.easyauthorization.exception;
 
-public class NotExistAccountException extends Exception{
+public class NotExistAccountException extends Exception {
 }

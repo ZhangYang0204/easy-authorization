@@ -18,22 +18,29 @@ import java.util.List;
 @EventListener
 public class PlayerClickMainOptionPageRegisterAccount implements Listener {
 
-    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class,slot = {21})
-    public void on(InventoryClickEvent event){
-        Player player= (Player) event.getWhoClicked();
-        MainOptionPage mainOptionPage= (MainOptionPage) event.getInventory().getHolder();
+    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {21})
+    public void on(InventoryClickEvent event) {
+        Player player = (Player) event.getWhoClicked();
+        MainOptionPage mainOptionPage = (MainOptionPage) event.getInventory().getHolder();
+        Player owner = mainOptionPage.getOwner().getPlayer();
+        if (owner == null) {
+            List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notOnline");
+            MessageUtil.sendMessageTo(player, list);
+            return;
+        }
+
+        GuiService guiService = (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
+        AccountMeta accountMeta = guiService.getAccount(owner.getUniqueId().toString());
 
 
-        GuiService guiService= (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
-        AccountMeta accountMeta=guiService.getAccount(mainOptionPage.getOwner().getUniqueId().toString());
-        if (accountMeta!=null){
-            List<String> list= MessageYaml.INSTANCE.getStringList("message.chat.duplicateAccount");
-            MessageUtil.sendMessageTo(player,list);
+        if (accountMeta != null) {
+            List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.duplicateAccount");
+            MessageUtil.sendMessageTo(player, list);
             return;
         }
 
 
-        new PlayerInputAfterClickMainOptionPageRegisterAccount(player,mainOptionPage.getOwner(),mainOptionPage);
+        new PlayerInputAfterClickMainOptionPageRegisterAccount(player, owner, mainOptionPage);
     }
 
 }

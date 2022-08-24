@@ -1,8 +1,10 @@
 message:
-
+  # can not be "" nor can not be filled in, otherwise the default value is used
   input:
-    cancel: "Cancel"
+    cancel: "cancel"
 
+
+  # Below support Papi variables
   chat:
     failureGetLatestVersion:
       - "&c&l Failed to get the latest version of EasyAuthorization."
@@ -37,32 +39,34 @@ message:
       - "&c&l invalid argument &F{argument}"
     notOnline:
       - "&c&L player is not online"
+    notPlayer:
+      - "&C&lonly player can do this"
 
     loginAccount:
-      - "&B&l login successful"
+      - "&B&l account login successful"
     reloadPlugin:
-      - "&b&l reload successful."
+      - "&b&l plugin reload successful."
     registerAccount:
-      - "&B&l registration successful"
+      - "&B&l account registration successful"
     cancelAccount:
-      - "&B&l cancelled the account"
+      - "&B&lYou cancelled your account"
     changeAccountPassword:
-      - "&B&l changed password"
+      - "&B&lYou changed your password"
 
     howToRegisterAccount:
-      - "&B&lEntered password to complete registration, entered &f&lCancel &B&lCancel"
+      - "&B&lEnter password to complete registration, enter &f&lCancel &B&lCancel"
     howToLoginAccount:
       - "&B&lEnter password to complete login, enter &f&lCancel &B&lCancel"
     howToChangeAccountPassword:
-      - "&B&lEnter a new password to complete the change, enter &F&lCancel &B&lCancel"
+      - "&B&lEnter new password to complete change, enter &F&lCancel &B&lCancel"
 
     wrongPassword:
       - "&C&l password error"
     notExistAccountWhenChangeAccountPassword:
-      - "&C&lNon-existing account, please register first"
+      - "&C&lNon-existing account, cannot change password, please register first"
 
     notExistAccountWhenLoginAccount:
-      - "&C&lAccounts that do not exist, please register first"
+      - "&C&l non-existent account, can't login, please register first"
     notLoginAccountWhenChangeAccountPassword:
       - "&C&lPlease login first before you can change your password"
     notLoginAccountWhenCancelAccount:
@@ -70,9 +74,9 @@ message:
     notExistAccountWhenCancelAccount:
       - "&C&lNot an account that does not exist and cannot be logged out"
     duplicateLoginAccount:
-      - "&C&l is already logged in"
+      - "&C&l is already logged in, no need to duplicate login"
     duplicateAccount:
-      - "&C&l is already registered"
+      - "&C&l already registered, no need to re-register"
 
 
 

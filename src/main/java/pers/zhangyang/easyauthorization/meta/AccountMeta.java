@@ -16,11 +16,11 @@ public class AccountMeta {
         return accountPassword;
     }
 
-    public String getPlayerUuid() {
-        return playerUuid;
-    }
-
     public void setAccountPassword(String accountPassword) {
         this.accountPassword = accountPassword;
+    }
+
+    public String getPlayerUuid() {
+        return playerUuid;
     }
 }

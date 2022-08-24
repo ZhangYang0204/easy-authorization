@@ -11,15 +11,24 @@ setting:
 
 
   #玩家没注册的情况下，会把玩家tp到指定下面的位置，不填意味着不开启此功能
+  #If the player is not registered, it will tp the player to the following location, not filling means not to enable this function
   registerLocation:
+    #如果填错或不填，registerLocation不会生效
+    #registerLocation will not take effect if it is filled in wrongly or not
     worldName: world
     #必须是小数形式，如果填错或不填，registerLocation不会生效
+    # must be in decimal form, if you fill in the wrong or not, registerLocation will not take effect
     x: 0.0
     #必须是小数形式，如果填错或不填，registerLocation不会生效
+    # must be in decimal form, if you fill in the wrong or not, registerLocation will not take effect
     y: 80.0
     #必须是小数形式，如果填错或不填，registerLocation不会生效
+    # must be in decimal form, if you fill in the wrong or not, registerLocation will not take effect
     z: 0.0
+    #必须是小数形式，如果填错或不填，registerLocation不会生效
+    # must be in decimal form, if you fill in the wrong or not, registerLocation will not take effect
     yaw: 0.0
     #必须是小数形式，如果填错或不填，registerLocation不会生效
+    # must be in decimal form, if you fill in the wrong or not, registerLocation will not take effect
     pitch: 0.0
 

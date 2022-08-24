@@ -1,8 +1,10 @@
 message:
 
+  #不可以是""也不能不填，否则采用默认值
   input:
     cancel: "取消"
 
+  #下面可以使用PAPI变量
   chat:
     failureGetLatestVersion:
       - "&c&l获得EasyAuthorization最新版本失败。"
@@ -37,17 +39,18 @@ message:
       - "&c&l无效的参数 &F{argument}"
     notOnline:
       - "&c&L玩家不在线"
-
+    notPlayer:
+      - "&C&l不是玩家不能这样做"
     loginAccount:
-      - "&B&l登入成功"
+      - "&B&l账户登入成功"
     reloadPlugin:
-      - "&b&l重载成功。"
+      - "&b&l插件重载成功。"
     registerAccount:
-      - "&B&l注册成功"
+      - "&B&l账户注册成功"
     cancelAccount:
-      - "&B&l注销了账户"
+      - "&B&l您注销了账户"
     changeAccountPassword:
-      - "&B&l修改了密码"
+      - "&B&l您修改了密码"
 
     howToRegisterAccount:
       - "&B&l输入密码完成注册，输入 &f&l取消 &B&l取消"
@@ -59,10 +62,10 @@ message:
     wrongPassword:
       - "&C&l密码错误"
     notExistAccountWhenChangeAccountPassword:
-      - "&C&l不存在的账户，请先注册"
+      - "&C&l不存在的账户，无法修改密码，请先注册"
 
     notExistAccountWhenLoginAccount:
-      - "&C&l不存在的账户，请先注册"
+      - "&C&l不存在的账户，无法登录，请先注册"
     notLoginAccountWhenChangeAccountPassword:
       - "&C&l请先登录，然后才能修改密码"
     notLoginAccountWhenCancelAccount:
@@ -70,9 +73,9 @@ message:
     notExistAccountWhenCancelAccount:
       - "&C&l不存在的账户，无法注销"
     duplicateLoginAccount:
-      - "&C&l已经登入了"
+      - "&C&l已经登入了，无需重复登录"
     duplicateAccount:
-      - "&C&l已经注册过了"
+      - "&C&l已经注册过了，无需重新注册"
 
 
 
