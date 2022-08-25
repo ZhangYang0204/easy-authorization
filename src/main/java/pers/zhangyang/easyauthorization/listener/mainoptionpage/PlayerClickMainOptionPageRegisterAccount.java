@@ -18,7 +18,7 @@ import java.util.List;
 @EventListener
 public class PlayerClickMainOptionPageRegisterAccount implements Listener {
 
-    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {29},closeGui = true,refreshGui = true)
+    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {29},closeGui = true,refreshGui = false)
     public void on(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
         MainOptionPage mainOptionPage = (MainOptionPage) event.getInventory().getHolder();
