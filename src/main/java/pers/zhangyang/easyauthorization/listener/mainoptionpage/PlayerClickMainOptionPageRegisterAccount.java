@@ -18,10 +18,11 @@ import java.util.List;
 @EventListener
 public class PlayerClickMainOptionPageRegisterAccount implements Listener {
 
-    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {21})
+    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {29},closeGui = true)
     public void on(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
         MainOptionPage mainOptionPage = (MainOptionPage) event.getInventory().getHolder();
+        assert mainOptionPage != null;
         Player owner = mainOptionPage.getOwner().getPlayer();
         if (owner == null) {
             List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notOnline");

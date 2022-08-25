@@ -20,11 +20,12 @@ import java.util.List;
 @EventListener
 public class PlayerClickMainOptionPageLoginAccount implements Listener {
 
-    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {23})
+    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {33},closeGui = true)
     public void on(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
         MainOptionPage mainOptionPage = (MainOptionPage) event.getInventory().getHolder();
         GuiService guiService = (GuiService) new TransactionInvocationHandler(new GuiServiceImpl()).getProxy();
+        assert mainOptionPage != null;
         AccountMeta accountMeta = guiService.getAccount(mainOptionPage.getOwner().getUniqueId().toString());
         Player owner = mainOptionPage.getOwner().getPlayer();
         if (owner == null) {

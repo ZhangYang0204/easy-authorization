@@ -20,11 +20,12 @@ import java.util.List;
 @EventListener
 public class PlayerClickMainOptionPageCancelAccount implements Listener {
 
-    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {13})
+    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {13},closeGui = false)
     public void on(InventoryClickEvent event) {
 
         Player player = (Player) event.getWhoClicked();
         MainOptionPage mainOptionPage = (MainOptionPage) event.getInventory().getHolder();
+        assert mainOptionPage != null;
         Player owner = mainOptionPage.getOwner().getPlayer();
         if (owner == null) {
             List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notOnline");

@@ -3,6 +3,7 @@ package pers.zhangyang.easyauthorization.domain;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import pers.zhangyang.easyauthorization.manager.GamerManager;
 import pers.zhangyang.easyauthorization.yaml.GuiYaml;
 import pers.zhangyang.easylibrary.base.BackAble;
 import pers.zhangyang.easylibrary.base.GuiPage;
@@ -22,20 +23,32 @@ public class MainOptionPage extends SingleGuiPageBase implements BackAble {
 
         this.inventory.clear();
 
-        ItemStack back = GuiYaml.INSTANCE.getButton("gui.button.mainOptionPage.back");
-        this.inventory.setItem(49, back);
+
+        Player onlineOwner=owner.getPlayer();
+        if (onlineOwner!=null){
+            Gamer gamer= GamerManager.INSTANCE.getGamer(onlineOwner);
+            if (gamer.isLogin()){
+                ItemStack back = GuiYaml.INSTANCE.getButton("gui.button.mainOptionPage.back");
+                this.inventory.setItem(49, back);
+            }
+        }
+
+
+
+
+
 
         ItemStack registerAccount = GuiYaml.INSTANCE.getButton("gui.button.mainOptionPage.registerAccount");
-        this.inventory.setItem(21, registerAccount);
+        this.inventory.setItem(29, registerAccount);
 
         ItemStack loginAccount = GuiYaml.INSTANCE.getButton("gui.button.mainOptionPage.loginAccount");
-        this.inventory.setItem(23, loginAccount);
+        this.inventory.setItem(33, loginAccount);
 
         ItemStack cancelAccount = GuiYaml.INSTANCE.getButton("gui.button.mainOptionPage.cancelAccount");
         this.inventory.setItem(13, cancelAccount);
 
         ItemStack changeAccountPassword = GuiYaml.INSTANCE.getButton("gui.button.mainOptionPage.changeAccountPassword");
-        this.inventory.setItem(22, changeAccountPassword);
+        this.inventory.setItem(31, changeAccountPassword);
 
         this.viewer.openInventory(this.inventory);
 
@@ -44,6 +57,8 @@ public class MainOptionPage extends SingleGuiPageBase implements BackAble {
 
     @Override
     public void back() {
+
+
         List<String> cmdList = GuiYaml.INSTANCE.getStringList("gui.firstPageBackCommand");
         if (cmdList == null) {
             return;

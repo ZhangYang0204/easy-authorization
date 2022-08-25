@@ -16,11 +16,12 @@ import java.util.List;
 @EventListener
 public class PlayerClickMainOptionPageChangeAccountPassword implements Listener {
 
-    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {22})
+    @GuiDiscreteButtonHandler(guiPage = MainOptionPage.class, slot = {31},closeGui = true)
     public void on(InventoryClickEvent event) {
 
         Player player = (Player) event.getWhoClicked();
         MainOptionPage mainOptionPage = (MainOptionPage) event.getInventory().getHolder();
+        assert mainOptionPage != null;
         Player owner = mainOptionPage.getOwner().getPlayer();
         if (owner == null) {
             List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notOnline");
