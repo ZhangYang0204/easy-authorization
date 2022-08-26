@@ -3,16 +3,16 @@ package pers.zhangyang.easyauthorization.listener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityPickupItemEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import pers.zhangyang.easyauthorization.domain.Gamer;
 import pers.zhangyang.easyauthorization.manager.GamerManager;
 import pers.zhangyang.easylibrary.annotation.EventListener;
 
 @EventListener
-public class EntityPickupItem implements Listener {
+public class PlayerDamage implements Listener {
 
     @EventHandler
-    public void on(EntityPickupItemEvent event) {
+    public void on(EntityDamageEvent event) {
         if (!(event.getEntity() instanceof Player)) {
             return;
         }
@@ -21,6 +21,7 @@ public class EntityPickupItem implements Listener {
         if (gamer.isLogin()) {
             return;
         }
+
         event.setCancelled(true);
     }
 }
