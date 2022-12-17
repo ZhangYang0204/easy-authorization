@@ -10,6 +10,7 @@ import pers.zhangyang.easyauthorization.service.impl.GuiServiceImpl;
 import pers.zhangyang.easyauthorization.yaml.MessageYaml;
 import pers.zhangyang.easylibrary.base.FiniteInputListenerBase;
 import pers.zhangyang.easylibrary.base.GuiPage;
+import pers.zhangyang.easylibrary.util.Md5Util;
 import pers.zhangyang.easylibrary.util.MessageUtil;
 import pers.zhangyang.easylibrary.util.TransactionInvocationHandler;
 
@@ -42,7 +43,7 @@ public class PlayerInputAfterClickMainOptionPageChangeAccountPassword extends Fi
 
 
         try {
-            guiService.changeAccountPassword(owner.getUniqueId().toString(), messages[0]);
+            guiService.changeAccountPassword(owner.getUniqueId().toString(), Md5Util.getMd5Value(messages[0]));
         } catch (NotExistAccountException e) {
             List<String> list = MessageYaml.INSTANCE.getStringList("message.chat.notExistAccountWhenChangeAccountPassword");
             MessageUtil.sendMessageTo(player, list);
